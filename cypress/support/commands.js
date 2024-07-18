@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add("checkTextContent", (selector, patternToMatch) => {
+    cy.get(selector).invoke("text").should("contain", patternToMatch);
+});
+
+Cypress.Commands.add("shouldExist", (selector) => {
+    cy.get(selector).should("exist");
+});

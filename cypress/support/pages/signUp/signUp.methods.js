@@ -2,19 +2,25 @@ import {SignUpElements} from './signUp.elements';
 
 export class SignUpMethods {
     static insertUsername(username){
-        SignUpElements.textBoxes.username.type(username).trigger('input').trigger('change');
+        if (username) {
+            SignUpElements.textBoxes.username.type(username).trigger('input').trigger('change');
+        }
     }
 
     static insertEmail(email){
-        SignUpElements.textBoxes.email.type(email).trigger('input').trigger('change');
+        if (email) {
+            SignUpElements.textBoxes.email.type(email).trigger('input').trigger('change');
+        }
     }
 
-    static insertPassword(password) {
-        SignUpElements.textBoxes.password.type(password).trigger('input').trigger('change');
+    static insertPassword(password){
+        if (password) {
+            SignUpElements.textBoxes.password.type(password).trigger('input').trigger('change');
+        }
     }
 
     static clickOnSignUpButton() {
-        SignUpElements.buttons.login.click()
+        SignUpElements.buttons.login.click({force: true}) 
     }
 
     static register(username, email, password) {
