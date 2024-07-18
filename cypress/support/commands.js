@@ -32,3 +32,7 @@ Cypress.Commands.add("checkTextContent", (selector, patternToMatch) => {
 Cypress.Commands.add("shouldExist", (selector) => {
     cy.get(selector).should("exist");
 });
+
+Cypress.Commands.add("shouldBeDisabled", (selector) => {
+    cy.get(selector).should("be.disabled");
+});

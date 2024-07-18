@@ -3,19 +3,27 @@ import { NewArticleElements } from "./newArticle.elements";
 export class NewArticleMethods {
 
     static insertTitle(title) {
-        NewArticleElements.textBoxes.articleTitle.type(title).trigger('input').trigger('change');
+        if (title) {
+            NewArticleElements.textBoxes.articleTitle.type(title).trigger('input').trigger('change');
+        }
     }
 
     static insertAboutArticle(aboutArticle) {
-        NewArticleElements.textBoxes.articleAbout.type(aboutArticle).trigger('input').trigger('change');
+        if (aboutArticle) {
+            NewArticleElements.textBoxes.articleAbout.type(aboutArticle).trigger('input').trigger('change');
+        }
     }
 
     static insertWriteArticle(writeText) {
-        NewArticleElements.textBoxes.writeArticle.type(writeText).trigger('input').trigger('change');
+        if (writeText) {
+            NewArticleElements.textBoxes.writeArticle.type(writeText).trigger('input').trigger('change');
+        }
     }
 
     static insertTags(tags) {
-        NewArticleElements.textBoxes.tags.type(tags).trigger('input').trigger('change');
+        if (tags) {
+            NewArticleElements.textBoxes.tags.type(tags).trigger('input').trigger('change');
+        }
     }
 
     static clickOnPublishedArticleButton() {
