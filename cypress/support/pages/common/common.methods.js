@@ -31,6 +31,14 @@ export class CommonMethods {
         });
     }
 
+    static clickOnNewArticleOption(){
+        CommonElements.topMenuAccount.newArticle.click();
+    }
+
+    static clickOnUserProfile() {
+        CommonElements.topMenuAccount.account.click();
+    }
+
     static generateRandomString(length=10) {
         let result = ''
         const characters = 'abcdefghijklmnñopqrstuvwxyz'
@@ -42,6 +50,11 @@ export class CommonMethods {
             counter += 1;
         }
         return result;
+    }
+
+    static generateUniqueTitle() {
+        const timestamp = new Date().getTime();
+        return `Test Article Title ${timestamp}`;
     }
 
 }
