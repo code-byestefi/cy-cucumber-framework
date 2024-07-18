@@ -4,6 +4,9 @@ import { SignUpMethods } from "../../../../support/pages/signUp/signUp.methods";
 import { SignUpData } from "../../../../support/pages/signUp/signUp.data";
 
 
+const user = CommonMethods.generateRandomString();
+const email = `${user}@test.com`;
+
 Given("I am on the home page", () => {
     CommonMethods.navigateToConduit();
     CommonMethods.clickOnHomeOption();
@@ -14,8 +17,8 @@ When("I navigate to the register page", () => {
 });
 
 And("I enter my username, email, and password", () => {
-    SignUpMethods.insertUsername(SignUpData.validCredentials.username)
-    SignUpMethods.insertEmail(SignUpData.validCredentials.email)
+    SignUpMethods.insertUsername(user)
+    SignUpMethods.insertEmail(email)
     SignUpMethods.insertPassword(SignUpData.validCredentials.password)
 })
 

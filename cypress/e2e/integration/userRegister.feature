@@ -11,7 +11,8 @@ Feature: User Registration
         And I enter my username, email, and password
         And I click the Sign up button
         Then I am taken to the home page as a logged in user
-
+        
+    @focus 
     Scenario: Registration with an already used username
         Given I am on the register page
         When I enter a username that is already in use while the rest of the fields are filled in appropriately
