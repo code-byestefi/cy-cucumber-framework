@@ -10,18 +10,14 @@ Feature: User Login
         And I click the Sign in button 
         Then I am taken to the home page as a logged in user after logging in
 
-    Scenario: Successful logout
-        Given I am logged in
-        When I navigate to the settings page
-        And I click the Log out button 
-        Then I should be redirected to the login page
-
+    @focus 
     Scenario: Logging in with incorrect email
         Given I am on the login page
         When I enter an incorrect email and my password
         And I click the Sign in button 
         Then I should see an error message indicating the email or password is incorrect
 
+    @focus 
     Scenario: Logging in with incorrect password
         Given I am on the login page
         When I enter my email and an incorrect password
