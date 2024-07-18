@@ -4,6 +4,7 @@ Feature: User Registration
     I want to register
     So that I can write and publish articles on the platform
 
+    @focus 
     Scenario: Successful registration
         Given I am on the home page
         When I navigate to the register page
