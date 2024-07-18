@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean-report": "rimraf ./allure-report && rimraf allure-results",
+    "running-test": "cypress run --env allure=true",
+    "generate-report": "allure generate allure-results -o allure-report --clean",
+    "open-report": "allure open",
+    "test": "npm run clean-report && npm run running-test & npm run generate-report && npm run open-report",
+    "cy:parallel": "npm run clean-report && cypress-parallel -s running-test -t 2 -d './cypress/e2e/tests' && npm run generate-report"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +20,11 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
-    "stepDefinitions": "cypress/e2e/integration/"
+    "stepDefinitions": "cypress/e2e/integration/tests"
+  },
+  "dependencies": {
+    "@mmisty/cypress-allure-adapter": "^2.6.1",
+    "allure-commandline": "^2.29.0",
+    "rimraf": "^6.0.1"
   }
 }
