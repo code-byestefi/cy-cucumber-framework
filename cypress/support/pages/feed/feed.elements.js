@@ -6,4 +6,17 @@ export class FeedElements {
     static get followButton() {
         return cy.get('button.action-btn')
     }
+
+    static get tagsList() {
+        return cy.get('div.tag-list a.tag-pill');
+    }
+
+    static get tagTab() {
+        return cy.get('a.nav-link.active'); 
+    }
+
+    static get articlePreviews() {
+        return cy.get('div.article-preview'); 
+    }
+
 }
